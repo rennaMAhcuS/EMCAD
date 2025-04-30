@@ -10,7 +10,7 @@ class MySegmentationDataset(Dataset):
     def __init__(self, data_images, data_masks, transform=None):
         self.images = data_images  # Now these are PIL Images or tensors
         self.masks = data_masks
-        self.transform = transform or transforms.Compose([transforms.ToTensor(), ])
+        self.transform = transform or transforms.Compose([transforms.ToTensor()])
 
     def __len__(self):
         return len(self.images)
@@ -175,11 +175,8 @@ class PVTEMCAD(nn.Module):
     def __init__(self, encoder_name='pvt_v2_b2', out_channels=1):
         super().__init__()
         self.encoder = timm.create_model(encoder_name, pretrained=True, features_only=True)
-
         # Get the actual channel sizes from the encoder
-        encoder_channels = self.encoder.feature_info.channels()
-
-        self.decoder = EMCADDecoder(channels=encoder_channels, out_channels=out_channels)
+        self.decoder = EMCADDecoder(channels=self.encoder.feature_info.channels(), out_channels=out_channels)
 
     def forward(self, x):
         return self.decoder(self.encoder(x))[1]
