@@ -2,6 +2,11 @@
 
 For details, look at the [**report**](EMCAD.pdf).
 
+## People who studied the report and replicated the results (us)
+
+- **Mohana Evuri**
+- **Gautam Siddharth K**
+
 ## Dataset Links
 
 - [**CVC-ClinicDB**](https://www.kaggle.com/datasets/balraj98/cvcclinicdb)
