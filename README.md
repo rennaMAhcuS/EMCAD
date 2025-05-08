@@ -1,6 +1,6 @@
 # EMCAD: Efficient Multi-scale Convolutional Attention Decoding for Medical Image Segmentation
 
-For details, look at the [**report**](EMCAD.pdf).
+For details, look at the [**report**](Presentation.pdf). The paper is present [**here**](EMCAD.pdf).
 
 ## People who studied the report and replicated the results (us)
 
